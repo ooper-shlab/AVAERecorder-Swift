@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>B5D5DC34-7DE6-48B4-84C1-5A9FC05C2064</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>0655ACAC32CB7139805A94304D9D27300DB0B18E</key>
+		<string>https://github.com/ooper-shlab/ToneGenerator1.0-Swift.git</string>
+	</dict>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>0655ACAC32CB7139805A94304D9D27300DB0B18E</key>
+		<string>ToneGenerator/</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/ooper-shlab/ToneGenerator1.0-Swift.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>0655ACAC32CB7139805A94304D9D27300DB0B18E</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>0655ACAC32CB7139805A94304D9D27300DB0B18E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ToneGenerator</string>
+		</dict>
+	</array>
+</dict>
+</plist>
