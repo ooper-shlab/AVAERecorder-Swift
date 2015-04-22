@@ -6,31 +6,35 @@
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>B5D5DC34-7DE6-48B4-84C1-5A9FC05C2064</string>
+	<key>IDESourceControlProjectName</key>
+	<string>AVAERecorder</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>0655ACAC32CB7139805A94304D9D27300DB0B18E</key>
-		<string>https://github.com/ooper-shlab/ToneGenerator1.0-Swift.git</string>
+		<key>D44173EC53CB7CE278B8F18DA7DC14B9D461C0E3</key>
+		<string>https://github.com/ooper-shlab/AVAERecorder-Swift.git</string>
 	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>AVAERecorder.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>0655ACAC32CB7139805A94304D9D27300DB0B18E</key>
-		<string>ToneGenerator/</string>
+		<key>D44173EC53CB7CE278B8F18DA7DC14B9D461C0E3</key>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/ooper-shlab/ToneGenerator1.0-Swift.git</string>
+	<string>https://github.com/ooper-shlab/AVAERecorder-Swift.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>0655ACAC32CB7139805A94304D9D27300DB0B18E</string>
+	<string>D44173EC53CB7CE278B8F18DA7DC14B9D461C0E3</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>0655ACAC32CB7139805A94304D9D27300DB0B18E</string>
+			<string>D44173EC53CB7CE278B8F18DA7DC14B9D461C0E3</string>
 			<key>IDESourceControlWCCName</key>
-			<string>ToneGenerator</string>
+			<string>AVAERecorder</string>
 		</dict>
 	</array>
 </dict>
