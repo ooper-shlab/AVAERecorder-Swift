@@ -10,7 +10,6 @@
 		D78809A91AE68DF300B8AB94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78809A81AE68DF300B8AB94 /* AppDelegate.swift */; };
 		D78809AB1AE68DF300B8AB94 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78809AA1AE68DF300B8AB94 /* ViewController.swift */; };
 		D78809AE1AE68DF300B8AB94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D78809AC1AE68DF300B8AB94 /* Main.storyboard */; };
-		D78809B01AE68DF300B8AB94 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D78809AF1AE68DF300B8AB94 /* Images.xcassets */; };
 		D78809B31AE68DF300B8AB94 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D78809B11AE68DF300B8AB94 /* LaunchScreen.xib */; };
 		D78809BF1AE68DF400B8AB94 /* AVAERecorderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78809BE1AE68DF400B8AB94 /* AVAERecorderTests.swift */; };
 /* End PBXBuildFile section */
@@ -31,7 +30,6 @@
 		D78809A81AE68DF300B8AB94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D78809AA1AE68DF300B8AB94 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D78809AD1AE68DF300B8AB94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D78809AF1AE68DF300B8AB94 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D78809B21AE68DF300B8AB94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		D78809B81AE68DF400B8AB94 /* AVAERecorderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AVAERecorderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D78809BD1AE68DF400B8AB94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -84,7 +82,6 @@
 				D78809A81AE68DF300B8AB94 /* AppDelegate.swift */,
 				D78809AA1AE68DF300B8AB94 /* ViewController.swift */,
 				D78809AC1AE68DF300B8AB94 /* Main.storyboard */,
-				D78809AF1AE68DF300B8AB94 /* Images.xcassets */,
 				D78809B11AE68DF300B8AB94 /* LaunchScreen.xib */,
 				D78809A61AE68DF300B8AB94 /* Supporting Files */,
 			);
@@ -160,7 +157,8 @@
 		D788099B1AE68DF300B8AB94 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = nagata_kobo;
 				TargetAttributes = {
 					D78809A21AE68DF300B8AB94 = {
@@ -198,7 +196,6 @@
 			files = (
 				D78809AE1AE68DF300B8AB94 /* Main.storyboard in Resources */,
 				D78809B31AE68DF300B8AB94 /* LaunchScreen.xib in Resources */,
-				D78809B01AE68DF300B8AB94 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +277,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -295,7 +293,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -333,7 +331,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -346,6 +344,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AVAERecorder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.oopers.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -356,6 +355,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AVAERecorder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.oopers.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -374,6 +374,7 @@
 				);
 				INFOPLIST_FILE = AVAERecorderTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.oopers.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AVAERecorder.app/AVAERecorder";
 			};
@@ -389,6 +390,7 @@
 				);
 				INFOPLIST_FILE = AVAERecorderTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.oopers.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AVAERecorder.app/AVAERecorder";
 			};
@@ -413,6 +415,7 @@
 				D78809C41AE68DF400B8AB94 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D78809C51AE68DF400B8AB94 /* Build configuration list for PBXNativeTarget "AVAERecorderTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +424,7 @@
 				D78809C71AE68DF400B8AB94 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
