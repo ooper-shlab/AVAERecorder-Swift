@@ -81,7 +81,7 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
         // recorded file path
         let filePaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
         let documentDir = filePaths.last! as String
-        let path = documentDir.stringByAppendingPathComponent("recorded.caf")
+        let path = (documentDir as NSString).stringByAppendingPathComponent("recorded.caf")
         let recordingURL = NSURL(fileURLWithPath: path)
         
         do {
@@ -123,7 +123,7 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
         // recorded file path
         let filePaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
         let documentDir = filePaths.last! as String
-        let path = documentDir.stringByAppendingPathComponent("recorded.caf")
+        let path = (documentDir as NSString).stringByAppendingPathComponent("recorded.caf")
         let recordingURL = NSURL(fileURLWithPath: path)
         
         let playedFile: AVAudioFile!
