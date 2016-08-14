@@ -11,18 +11,7 @@
 		D78809AB1AE68DF300B8AB94 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78809AA1AE68DF300B8AB94 /* ViewController.swift */; };
 		D78809AE1AE68DF300B8AB94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D78809AC1AE68DF300B8AB94 /* Main.storyboard */; };
 		D78809B31AE68DF300B8AB94 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D78809B11AE68DF300B8AB94 /* LaunchScreen.xib */; };
-		D78809BF1AE68DF400B8AB94 /* AVAERecorderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78809BE1AE68DF400B8AB94 /* AVAERecorderTests.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		D78809B91AE68DF400B8AB94 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D788099B1AE68DF300B8AB94 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D78809A21AE68DF300B8AB94;
-			remoteInfo = AVAERecorder;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		D78809A31AE68DF300B8AB94 /* AVAERecorder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AVAERecorder.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -31,22 +20,12 @@
 		D78809AA1AE68DF300B8AB94 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D78809AD1AE68DF300B8AB94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D78809B21AE68DF300B8AB94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		D78809B81AE68DF400B8AB94 /* AVAERecorderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AVAERecorderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D78809BD1AE68DF400B8AB94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D78809BE1AE68DF400B8AB94 /* AVAERecorderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVAERecorderTests.swift; sourceTree = "<group>"; };
 		D78809CC1AE68E8100B8AB94 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		D78809CD1AE68E8100B8AB94 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		D78809A01AE68DF300B8AB94 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D78809B51AE68DF400B8AB94 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -62,7 +41,6 @@
 				D78809CC1AE68E8100B8AB94 /* LICENSE.txt */,
 				D78809CD1AE68E8100B8AB94 /* README.md */,
 				D78809A51AE68DF300B8AB94 /* AVAERecorder */,
-				D78809BB1AE68DF400B8AB94 /* AVAERecorderTests */,
 				D78809A41AE68DF300B8AB94 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -71,7 +49,6 @@
 			isa = PBXGroup;
 			children = (
 				D78809A31AE68DF300B8AB94 /* AVAERecorder.app */,
-				D78809B81AE68DF400B8AB94 /* AVAERecorderTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,23 +73,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D78809BB1AE68DF400B8AB94 /* AVAERecorderTests */ = {
-			isa = PBXGroup;
-			children = (
-				D78809BE1AE68DF400B8AB94 /* AVAERecorderTests.swift */,
-				D78809BC1AE68DF400B8AB94 /* Supporting Files */,
-			);
-			path = AVAERecorderTests;
-			sourceTree = "<group>";
-		};
-		D78809BC1AE68DF400B8AB94 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				D78809BD1AE68DF400B8AB94 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -133,24 +93,6 @@
 			productReference = D78809A31AE68DF300B8AB94 /* AVAERecorder.app */;
 			productType = "com.apple.product-type.application";
 		};
-		D78809B71AE68DF400B8AB94 /* AVAERecorderTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D78809C51AE68DF400B8AB94 /* Build configuration list for PBXNativeTarget "AVAERecorderTests" */;
-			buildPhases = (
-				D78809B41AE68DF400B8AB94 /* Sources */,
-				D78809B51AE68DF400B8AB94 /* Frameworks */,
-				D78809B61AE68DF400B8AB94 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D78809BA1AE68DF400B8AB94 /* PBXTargetDependency */,
-			);
-			name = AVAERecorderTests;
-			productName = AVAERecorderTests;
-			productReference = D78809B81AE68DF400B8AB94 /* AVAERecorderTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -158,15 +100,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = nagata_kobo;
 				TargetAttributes = {
 					D78809A21AE68DF300B8AB94 = {
 						CreatedOnToolsVersion = 6.3;
-					};
-					D78809B71AE68DF400B8AB94 = {
-						CreatedOnToolsVersion = 6.3;
-						TestTargetID = D78809A21AE68DF300B8AB94;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -184,7 +123,6 @@
 			projectRoot = "";
 			targets = (
 				D78809A21AE68DF300B8AB94 /* AVAERecorder */,
-				D78809B71AE68DF400B8AB94 /* AVAERecorderTests */,
 			);
 		};
 /* End PBXProject section */
@@ -196,13 +134,6 @@
 			files = (
 				D78809AE1AE68DF300B8AB94 /* Main.storyboard in Resources */,
 				D78809B31AE68DF300B8AB94 /* LaunchScreen.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D78809B61AE68DF400B8AB94 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,23 +149,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D78809B41AE68DF400B8AB94 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D78809BF1AE68DF400B8AB94 /* AVAERecorderTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		D78809BA1AE68DF400B8AB94 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D78809A21AE68DF300B8AB94 /* AVAERecorder */;
-			targetProxy = D78809B91AE68DF400B8AB94 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D78809AC1AE68DF300B8AB94 /* Main.storyboard */ = {
@@ -269,8 +184,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -314,8 +231,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -346,6 +265,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.oopers.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -357,42 +277,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.oopers.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		D78809C61AE68DF400B8AB94 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = AVAERecorderTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.oopers.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AVAERecorder.app/AVAERecorder";
-			};
-			name = Debug;
-		};
-		D78809C71AE68DF400B8AB94 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = AVAERecorderTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.oopers.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AVAERecorder.app/AVAERecorder";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -413,15 +299,6 @@
 			buildConfigurations = (
 				D78809C31AE68DF400B8AB94 /* Debug */,
 				D78809C41AE68DF400B8AB94 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D78809C51AE68DF400B8AB94 /* Build configuration list for PBXNativeTarget "AVAERecorderTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D78809C61AE68DF400B8AB94 /* Debug */,
-				D78809C71AE68DF400B8AB94 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

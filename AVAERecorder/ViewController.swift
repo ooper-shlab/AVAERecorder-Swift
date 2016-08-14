@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate {
+class ViewController: UIViewController, AVAudioPlayerDelegate {
     
     @IBOutlet weak var recStartButton: UIButton!
     @IBOutlet weak var recStopButton: UIButton!
@@ -18,7 +18,7 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
     var audioFile: AVAudioFile?
     
     var engine: AVAudioEngine!
-    let connectionFormat = AVAudioFormat(commonFormat: .PCMFormatFloat32, sampleRate: 44_100, channels: 2, interleaved: false)
+    let connectionFormat = AVAudioFormat(commonFormat: .pcmFormatFloat32, sampleRate: 44_100, channels: 2, interleaved: false)
     
     var playerEngine: AVAudioEngine!
     var playerNode: AVAudioPlayerNode!
@@ -31,18 +31,18 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
         engine = AVAudioEngine()
         let input = engine.inputNode
         
-        input!.installTapOnBus(0, bufferSize: 4096, format: connectionFormat, block: {
+        input!.installTap(onBus: 0, bufferSize: 4096, format: connectionFormat, block: {
             buffer, when in
-            print("\(buffer.frameLength) \(buffer.frameCapacity) \(AVAudioTime.secondsForHostTime(when.hostTime))");
+//            print("\(buffer.frameLength) \(buffer.frameCapacity) \(AVAudioTime.seconds(forHostTime: when.hostTime))");
             do {
-                try self.audioFile?.writeFromBuffer(buffer)
+                try self.audioFile?.write(from: buffer)
             } catch let blockError as NSError {
                 print(blockError)
             } catch {
                 fatalError()
             }
             if self.shouldStopRecording {
-                dispatch_async(dispatch_get_main_queue()) {
+                DispatchQueue.main.async {
                     self.stopRecording()
                 }
             }
@@ -50,7 +50,7 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
         
         playerEngine = AVAudioEngine()
         playerNode = AVAudioPlayerNode()
-        playerEngine.attachNode(playerNode)
+        playerEngine.attach(playerNode)
         playerEngine.connect(playerNode, to: playerEngine.outputNode, format: connectionFormat)
         do {
             try playerEngine.start()
@@ -61,28 +61,27 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
         playerNode.play()
     }
     
-    override func viewWillAppear(animated: Bool) {
-        recStopButton.enabled = false
+    override func viewWillAppear(_ animated: Bool) {
+        recStopButton.isEnabled = false
     }
     
-    override func shouldAutorotate() -> Bool {
+    override var shouldAutorotate: Bool {
         return false
     }
     
-    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        return UIInterfaceOrientationMask.Portrait
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.portrait
     }
     
-    @IBAction func recStart(sender: AnyObject) {
-        recStartButton.enabled = false
-        recStopButton.enabled = true
-        playButton.enabled = false
+    @IBAction func recStart(_ sender: AnyObject) {
+        recStartButton.isEnabled = false
+        recStopButton.isEnabled = true
+        playButton.isEnabled = false
         
         // recorded file path
-        let filePaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
-        let documentDir = filePaths.last! as String
-        let path = (documentDir as NSString).stringByAppendingPathComponent("recorded.caf")
-        let recordingURL = NSURL(fileURLWithPath: path)
+        let fileURLs = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let documentDirURL = fileURLs.last!
+        let recordingURL = documentDirURL.appendingPathComponent("recorded.caf")
         
         do {
             audioFile = try AVAudioFile(forWriting: recordingURL, settings: connectionFormat.settings)
@@ -101,9 +100,9 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
     }
     
     func stopRecording() {
-        recStartButton.enabled = true
-        recStopButton.enabled = false
-        playButton.enabled = true
+        recStartButton.isEnabled = true
+        recStopButton.isEnabled = false
+        playButton.isEnabled = true
         
         engine.stop()
         audioFile = nil
@@ -111,40 +110,38 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
         shouldStopRecording = false
     }
     
-    @IBAction func recStop(sender: AnyObject) {
+    @IBAction func recStop(_ sender: AnyObject) {
         engine.inputNode!.volume = 0.0
         shouldStopRecording = true
     }
     
-    @IBAction func play(sender: AnyObject) {
-        recStartButton.enabled = false
-        recStopButton.enabled = false
-        playButton.enabled = false
+    @IBAction func play(_ sender: AnyObject) {
+        recStartButton.isEnabled = false
+        recStopButton.isEnabled = false
+        playButton.isEnabled = false
         // recorded file path
-        let filePaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
-        let documentDir = filePaths.last! as String
-        let path = (documentDir as NSString).stringByAppendingPathComponent("recorded.caf")
-        let recordingURL = NSURL(fileURLWithPath: path)
+        let fileURLs = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let documentDirURL = fileURLs.last!
+        let recordingURL = documentDirURL.appendingPathComponent("recorded.caf")
         
-        let playedFile: AVAudioFile!
         do {
-            playedFile = try AVAudioFile(forReading: recordingURL)
-        } catch _ {
-            playedFile = nil
-        }
-        playerNode.scheduleFile(playedFile, atTime: nil) {
-            [weak self] () in
-            dispatch_async(dispatch_get_main_queue()) {
-                //stopping player or engine herein causes remaining buffer unplayed.
-                self!.audioPlayerDidCompleteScheduledFile()
+            let playedFile = try AVAudioFile(forReading: recordingURL)
+            playerNode.scheduleFile(playedFile, at: nil) {
+                [weak self] () in
+                DispatchQueue.main.async {
+                    //stopping player or engine herein causes remaining buffer unplayed.
+                    self!.audioPlayerDidCompleteScheduledFile()
+                }
             }
+        } catch {
+            print(error)
         }
         
     }
     
     func audioPlayerDidCompleteScheduledFile() {
-        recStartButton.enabled = true
-        recStopButton.enabled = false
-        playButton.enabled = true
+        recStartButton.isEnabled = true
+        recStopButton.isEnabled = false
+        playButton.isEnabled = true
     }
 }
