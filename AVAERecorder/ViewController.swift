@@ -31,22 +31,20 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         engine = AVAudioEngine()
         let input = engine.inputNode
         
-        input!.installTap(onBus: 0, bufferSize: 4096, format: connectionFormat, block: {
+        input!.installTap(onBus: 0, bufferSize: 4096, format: connectionFormat) {
             buffer, when in
 //            print("\(buffer.frameLength) \(buffer.frameCapacity) \(AVAudioTime.seconds(forHostTime: when.hostTime))");
             do {
                 try self.audioFile?.write(from: buffer)
-            } catch let blockError as NSError {
-                print(blockError)
             } catch {
-                fatalError()
+                print(error)
             }
             if self.shouldStopRecording {
                 DispatchQueue.main.async {
                     self.stopRecording()
                 }
             }
-        })
+        }
         
         playerEngine = AVAudioEngine()
         playerNode = AVAudioPlayerNode()
@@ -54,7 +52,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         playerEngine.connect(playerNode, to: playerEngine.outputNode, format: connectionFormat)
         do {
             try playerEngine.start()
-        } catch let error as NSError {
+        } catch {
             print(error)
         }
         
@@ -85,7 +83,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         
         do {
             audioFile = try AVAudioFile(forWriting: recordingURL, settings: connectionFormat.settings)
-        } catch let error as NSError {
+        } catch {
             print(error)
             audioFile = nil
         }
@@ -93,7 +91,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         // start engine
         do {
             try engine.start()
-        } catch let error as NSError {
+        } catch {
             print(error)
         }
         
