@@ -4,8 +4,9 @@ A simple example of audio recorder using AVAudioEngine
 Created by OOPer in cooperation with shlab.jp, on 2015/4/21.
 
 ===========================================================================
+
 BUILD REQUIREMENTS:
 
-Xcode 8.3.3
+Xcode 10.2
 
 ===========================================================================

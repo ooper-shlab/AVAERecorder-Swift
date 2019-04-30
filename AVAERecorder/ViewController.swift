@@ -18,7 +18,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     var audioFile: AVAudioFile?
     
     var engine: AVAudioEngine!
-    let connectionFormat = AVAudioFormat(commonFormat: .pcmFormatFloat32, sampleRate: 44_100, channels: 2, interleaved: false)
+    let connectionFormat = AVAudioFormat(commonFormat: .pcmFormatFloat32, sampleRate: 44_100, channels: 2, interleaved: false)!
     
     var playerEngine: AVAudioEngine!
     var playerNode: AVAudioPlayerNode!
@@ -31,7 +31,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         engine = AVAudioEngine()
         let input = engine.inputNode
         
-        input!.installTap(onBus: 0, bufferSize: 4096, format: connectionFormat) {
+        input.installTap(onBus: 0, bufferSize: 4096, format: connectionFormat) {
             buffer, when in
 //            print("\(buffer.frameLength) \(buffer.frameCapacity) \(AVAudioTime.seconds(forHostTime: when.hostTime))");
             do {
@@ -109,7 +109,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     @IBAction func recStop(_ sender: AnyObject) {
-        engine.inputNode!.volume = 0.0
+        engine.inputNode.volume = 0.0
         shouldStopRecording = true
     }
     

@@ -1,7 +1,7 @@
 AVAERecorder: A simple example of audio recorder using AVAudioEngine
 Version:  1.0
 
-Copyright (c) 2015, OOPer(NAGATA, Atsuyuki)
+Copyright (c) 2015-2019, OOPer(NAGATA, Atsuyuki)
 All rights reserved.
 
 Use of any parts(functions, classes or any other program language components)
